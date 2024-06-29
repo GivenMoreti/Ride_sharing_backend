@@ -3,10 +3,10 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path("rides/home/",views.home_page,name="home-page"),
-    path("",views.getRides,name = "get-rides"),
-    path("create/",views.createRide,name = "create-ride"),
-    path("<str:pk>/",views.getRide,name = "get-ride"),
-    path("<str:pk>/update/",views.updateRide,name = "update-ride"),
-    path("<str:pk>/delete/",views.deleteRide,name = "delete-ride"),
+  
+    path("",views.getRideRequests,name = "get-rides-requests"),
+    path("create/",views.createRideRequest,name = "create-ride-request"),
+    path("<str:pk>/",views.getRideRequest,name = "get-ride-request"),
+    path("<str:pk>/update/",views.updateRideRequest,name = "update-ride-request"),
+    path("<str:pk>/delete/",views.deleteRideRequest,name = "delete-ride-request"),
 ]
