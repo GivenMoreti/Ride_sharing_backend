@@ -12,4 +12,5 @@ urlpatterns = [
     path("locations/",include("location.urls")),
     path("vehicles/",include("vehicle.urls")),
     path("request_ride/",include("request_ride.urls")),
+    path("user_profile/",include("user_profile.urls")),
 ]
