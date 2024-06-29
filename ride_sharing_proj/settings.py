@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'location',
     'vehicle',
+    'request_ride',
 ]
 
 MIDDLEWARE = [

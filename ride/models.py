@@ -6,7 +6,7 @@ from django.utils import timezone
 
 
 class Ride(models.Model):
-    rider = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='rides_as_rider')
+    #rider = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='rides_as_rider')
     driver = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True, blank=True, related_name='rides_as_driver')
     pickup_location = models.CharField(max_length=255)
     dropoff_location = models.CharField(max_length=255)
