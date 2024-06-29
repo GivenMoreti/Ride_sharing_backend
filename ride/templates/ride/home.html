@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{%block content%}
+<div class="container">
+    <div>
+    {% if message %}
+     <p>{{ message }}</p>
+    {% endif %}
+    </div>
+<table class="table">
+    <thead>
+      <tr>
+     
+        <th scope="col">Passenger</th>
+        <th scope="col">Driver</th>
+        <th scope="col">Pick up location</th>
+        <th scope="col">Drop off</th>
+        <th scope="col">Pick up time</th>
+        <th scope="col">Fare</th>
+        <th scope="col">Payment status</th>
+        <th scope="col">Created</th>
+        <th scope="col">Completed</th>
+
+      </tr>
+    </thead>
+    <tbody>
+        {%for i in get_rides %}
+      <tr>  
+        <td>{{i.rider}}</td>
+        <td>{{i.driver}}</td>
+        <td>{{i.pickup_location}}</td>
+        <td>{{i.dropoff_location}}</td>
+        <td>{{i.pickup_date_time}}</td>
+        <td>{{i.fare_amount}}</td>
+        
+        {% if i.payment_status %}
+            <td>paid</td>
+        {%else%}
+            <td>pending</td>
+        {%endif%}
+
+        <td>{{i.created_at}} ago</td>
+        <td>{{i.completed}}</td>
+     
+      </tr>
+    {%endfor%}
+    
+    </tbody>
+  </table>
+</div>
+
+{%endblock%}
