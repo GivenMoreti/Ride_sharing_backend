@@ -6,3 +6,9 @@ from .models import Ride
 def delete_completed_ride(sender, instance, **kwargs):
     if instance.completed:
         instance.delete()
+
+
+@receiver(post_save, sender=Ride)
+def remove_from_requests(sender,instance,**kwargs):
+    if instance.is_fully_booked:
+        instance.delete()
