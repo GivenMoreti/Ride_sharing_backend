@@ -5,6 +5,8 @@ from ride.models import Ride
 # Create your models here.
 class RequestRide(models.Model):
     ride = models.ForeignKey(Ride,on_delete=models.CASCADE)
+    #who made the request
+    #passenger = models.
     time_requested = models.DateTimeField(auto_now_add=True)
     time_edited = models.DateTimeField(auto_now=True)
     cancel_request = models.BooleanField(default=False)     #if user changes to True request is aborted

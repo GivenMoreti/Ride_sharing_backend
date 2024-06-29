@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'location',
     'vehicle',
     'request_ride',
+    'user_profile',
 ]
 
 MIDDLEWARE = [
