@@ -1,12 +1,13 @@
 from django.db import models
 from ride.models import Ride
+from user_profile.models import UserProfile
 
 
 # Create your models here.
 class RequestRide(models.Model):
     ride = models.ForeignKey(Ride,on_delete=models.CASCADE)
     #who made the request
-    #passenger = models.
+    passenger = models.ForeignKey(UserProfile,on_delete=models.CASCADE,null=True)
     time_requested = models.DateTimeField(auto_now_add=True)
     time_edited = models.DateTimeField(auto_now=True)
     cancel_request = models.BooleanField(default=False)     #if user changes to True request is aborted
